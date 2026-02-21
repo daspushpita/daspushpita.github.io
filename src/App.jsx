@@ -191,20 +191,31 @@ function App() {
             ))}
           </div>
         </section>
+
+        <section id="contact" className="section-block contact-section">
+          <div className="section-title reveal">
+            <p>Get in Touch</p>
+            <h2>Contact</h2>
+          </div>
+          <div className="contact-card reveal">
+            <p>Open to research collaborations and ML engineering roles.</p>
+            <div className="contact-links">
+              <a href="mailto:pushpitads1996@gmail.com">Email</a>
+              <a href="https://github.com/daspushpita" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/pushpita-das/" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <footer id="contact" className="footer reveal">
-        <p>
-          Open to research collaborations and ML engineering roles.
-        </p>
+      <footer className="footer reveal">
+        <p>Pushpita Das</p>
         <div>
-          <a href="mailto:pushpitads1996@gmail.com">Email</a>
-          <a href="https://github.com/daspushpita" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/pushpita-das/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
+          <a href="#top">Back to top</a>
         </div>
       </footer>
     </div>
