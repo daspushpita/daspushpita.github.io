@@ -60,28 +60,17 @@ const mlProjects = [
 
 const physicsProjects = [
   {
-    title: 'GRMHD Jets (3D Neutron Star Simulations)',
+    title: 'GRMHD simulations of accreting neutron stars',
     stage: 'Published',
     summary:
-      'First 3D GRMHD simulations of accreting neutron stars, including jet formation in extreme magnetized environments.',
+      'Developed large-scale 3D GRMHD simulations of accreting neutron stars across jet-producing and multipolar magnetic field regimes.',
     highlights: [
-      'Built robust MPI-parallelized Fortran/C simulation workflows.',
-      'Ran large-scale campaigns on CPU clusters with optimized memory and I/O.',
-      'Published in The Astrophysical Journal Letters (2024).',
-    ],
-    stack: 'Fortran, C, MPI, HPC, GRMHD',
-  },
-  {
-    title: 'GRMHD with Multipolar Magnetic Fields',
-    stage: 'Published',
-    summary:
-      'Large-scale simulations of accreting neutron stars with non-dipole magnetic field geometries.',
-    highlights: [
-      'Designed and executed multiphysics simulation studies over large parameter grids.',
+      'Built MPI-parallelized Fortran/C workflows for robust multiphysics simulations on HPC clusters.',
+      'Modeled both jet formation and non-dipole (multipolar) field geometries in extreme magnetized flows.',
       'Processed and analyzed approximately 80 TB of simulation data.',
-      'Published in MNRAS (2022).',
+      'Published in ApJL (2024) and MNRAS (2022).',
     ],
-    stack: 'Python, Fortran, HPC data analysis, CFD',
+    stack: 'Fortran, C, MPI, Python, GRMHD, HPC',
   },
   {
     title: 'Ray-Tracing from Global GRMHD Simulations',
@@ -123,11 +112,11 @@ function ProjectCard({ project }) {
         <span className="project-stage">{project.stage}</span>
       </div>
       <p>{project.summary}</p>
-      <ul>
+      <div className="highlights">
         {project.highlights.map((highlight) => (
-          <li key={highlight}>{highlight}</li>
+          <p key={highlight}>{highlight}</p>
         ))}
-      </ul>
+      </div>
       <p className="stack">{project.stack}</p>
     </article>
   )
@@ -191,16 +180,16 @@ function App() {
             <p>Research</p>
             <h2>Selected Publications</h2>
           </div>
-          <ol>
+          <div className="publication-list">
             {publications.map((paper) => (
-              <li key={paper.link} className="reveal">
+              <article key={paper.link} className="publication-item reveal">
                 <p>{paper.citation}</p>
                 <a href={paper.link} target="_blank" rel="noreferrer">
                   DOI
                 </a>
-              </li>
+              </article>
             ))}
-          </ol>
+          </div>
         </section>
       </main>
 
