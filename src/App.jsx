@@ -138,17 +138,21 @@ function App() {
 
       <main id="top">
         <section className="hero reveal">
-          <img className="hero-photo" src="/profile.jpg" alt="Pushpita Das" />
-          <p className="eyebrow">Computational Physicist and ML Practitioner</p>
-          <h1>Building machine learning systems and simulation pipelines for extreme astrophysical environments.</h1>
-          <p className="lede">
-            PhD-trained researcher focused on scientific machine learning, multimodal AI, and high-performance numerical
-            modeling. I build reproducible systems that connect theory, data, and computation.
-          </p>
-          <div className="focus-row">
-            {focusAreas.map((area) => (
-              <span key={area}>{area}</span>
-            ))}
+          <div className="hero-content">
+            <p className="eyebrow">Computational Physicist and ML Practitioner</p>
+            <h1>Building machine learning systems and simulation pipelines for extreme astrophysical environments.</h1>
+            <p className="lede">
+              PhD-trained researcher focused on scientific machine learning, multimodal AI, and high-performance numerical
+              modeling. I build reproducible systems that connect theory, data, and computation.
+            </p>
+            <div className="focus-row">
+              {focusAreas.map((area) => (
+                <span key={area}>{area}</span>
+              ))}
+            </div>
+          </div>
+          <div className="hero-photo-wrap hero-photo-slot">
+            <img className="hero-photo" src="/profile.jpg" alt="Pushpita Das profile photo" />
           </div>
         </section>
 
