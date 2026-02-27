@@ -321,6 +321,26 @@ main {
   color: var(--muted);
 }
 
+.project-publication {
+  margin: 0.62rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.52;
+  color: var(--muted);
+}
+
+.paper-link {
+  font-family: var(--mono-font);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid color-mix(in srgb, var(--accent) 44%, var(--line));
+  border-radius: 999px;
+  padding: 0.16rem 0.46rem;
+  margin-left: 0.22rem;
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--accent-soft) 62%, var(--panel-strong));
+}
+
 .repo-link {
   margin-top: 0.85rem;
   display: inline-flex;

@@ -88,6 +88,10 @@ const physicsProjects = [
       'Used for physically grounded synthetic observables and model comparison.',
     ],
     stack: 'Python, ray tracing, simulation post-processing, HPC',
+    publication: {
+      citation: 'Published in The Astrophysical Journal (2025).',
+      link: 'https://doi.org/10.3847/1538-4357/add472',
+    },
   },
 ]
 
@@ -146,6 +150,14 @@ function ProjectCard({ project }) {
         ))}
       </div>
       <p className="stack">{project.stack}</p>
+      {project.publication && (
+        <p className="project-publication">
+          {project.publication.citation}{' '}
+          <a href={project.publication.link} target="_blank" rel="noreferrer" className="paper-link">
+            DOI
+          </a>
+        </p>
+      )}
       {project.github && (
         <a href={project.github} target="_blank" rel="noreferrer" className="repo-link">
           View Project on GitHub
