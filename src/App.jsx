@@ -139,8 +139,10 @@ function App() {
       <main id="top">
         <section className="hero reveal">
           <div className="hero-content">
-            <p className="eyebrow">Computational Physicist and ML Practitioner</p>
-            <h1>Building machine learning systems and simulation pipelines for extreme astrophysical environments.</h1>
+            <p className="eyebrow">
+              Computational Scientist | Machine Learning & Data Science | High-Performance Computing | Physics-Driven
+              Modeling
+            </p>
             <p className="lede">
               PhD-trained researcher focused on scientific machine learning, multimodal AI, and high-performance numerical
               modeling. I build reproducible systems that connect theory, data, and computation.
