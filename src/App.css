@@ -83,6 +83,15 @@ main {
   color: var(--muted);
 }
 
+.hero-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--line);
+  box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.9);
+}
+
 .hero h1 {
   margin: 0;
   max-width: 18ch;
@@ -409,6 +418,11 @@ main {
   .hero {
     padding: 1.35rem 0.98rem;
     border-radius: 18px;
+  }
+
+  .hero-photo {
+    width: 110px;
+    height: 110px;
   }
 
   .hero h1 {

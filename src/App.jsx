@@ -138,6 +138,7 @@ function App() {
 
       <main id="top">
         <section className="hero reveal">
+          <img className="hero-photo" src="/profile.jpg" alt="Pushpita Das" />
           <p className="eyebrow">Computational Physicist and ML Practitioner</p>
           <h1>Building machine learning systems and simulation pipelines for extreme astrophysical environments.</h1>
           <p className="lede">
