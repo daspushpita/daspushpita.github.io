@@ -178,8 +178,9 @@ function App() {
               Modeling
             </p>
             <p className="lede">
-              PhD-trained researcher focused on scientific machine learning, multimodal AI, and high-performance numerical
-              modeling. I build reproducible systems that connect theory, data, and computation.
+              Computational scientist with a PhD in astronomy building scientific machine learning and physics-based simulation
+              systems. I develop reproducible workflows that connect theory, large-scale data, and high-performance
+              computation.
             </p>
             <div className="focus-row">
               {focusAreas.map((area) => (
@@ -189,6 +190,21 @@ function App() {
           </div>
           <div className="hero-photo-wrap hero-photo-slot">
             <img className="hero-photo" src="/profile-photo.jpg" alt="Pushpita Das profile photo" />
+          </div>
+          <div id="career" className="intro-career">
+            <p className="intro-career-label">Career Timeline</p>
+            <div className="timeline-list">
+              {careerTimeline.map((entry) => (
+                <article key={`${entry.title}-${entry.period}`} className="timeline-item reveal">
+                  <p className="timeline-period">{entry.period}</p>
+                  <div className="timeline-content-card">
+                    <h3>{entry.title}</h3>
+                    <p className="timeline-org">{entry.organization}</p>
+                    <p>{entry.details}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -212,25 +228,6 @@ function App() {
           <div className="project-grid">
             {physicsProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-        </section>
-
-        <section id="career" className="section-block career-section">
-          <div className="section-title reveal">
-            <p>Education and Experience</p>
-            <h2>Career Timeline</h2>
-          </div>
-          <div className="timeline-list">
-            {careerTimeline.map((entry) => (
-              <article key={`${entry.title}-${entry.period}`} className="timeline-item reveal">
-                <p className="timeline-period">{entry.period}</p>
-                <div className="timeline-content-card">
-                  <h3>{entry.title}</h3>
-                  <p className="timeline-org">{entry.organization}</p>
-                  <p>{entry.details}</p>
-                </div>
-              </article>
             ))}
           </div>
         </section>
