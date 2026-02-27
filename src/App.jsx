@@ -45,7 +45,7 @@ const mlProjects = [
       'Developed end-to-end evaluation with ablations and systematic error analysis.',
     ],
     stack: 'PINNs, TensorFlow/PyTorch, scientific ML',
-    github: 'https://github.com/daspushpita/predict-parkinsons',
+    github: 'https://github.com/daspushpita/heat_ml',
   },
   {
     title: "Parkinson's Severity Prediction",
@@ -58,7 +58,7 @@ const mlProjects = [
       'Achieved 66% accuracy and 96% recall with regularized logistic regression.',
     ],
     stack: 'Scikit-learn, XGBoost, multimodal tabular ML',
-    github: 'https://github.com/daspushpita/heat_ml',
+    github: 'https://github.com/daspushpita/predict-parkinsons',
   },
 ]
 
@@ -80,11 +80,12 @@ const physicsProjects = [
     title: 'Ray-Tracing from Global GRMHD Simulations',
     stage: 'Published',
     summary:
-      'Developed a ray-tracing pipeline for synthetic X-ray pulse profiles from accreting neutron-star surface emission.',
+      'Developed a ray-tracing pipeline for synthetic X-ray spectra from accreting neutron-star surface emission.',
     highlights: [
       'Integrated 3D GRMHD simulation outputs with radiative post-processing.',
-      'Built analysis tooling for turbulence in highly magnetized, radiation-dominated flows.',
-      'Published in The Astrophysical Journal (2025) for physically grounded synthetic observables and model comparison.',
+      'Mapped accretion-hotspot geometry across stellar magnetic inclinations using global 3D GRMHD simulations.',
+      'Quantified how hotspot morphology shapes predicted X-ray pulse behavior for accreting neutron stars.',
+      'Used for physically grounded synthetic observables and model comparison.',
     ],
     stack: 'Python, ray tracing, simulation post-processing, HPC',
   },
@@ -118,16 +119,10 @@ const careerTimeline = [
   },
   {
     period: 'Sep 2019 - Jun 2024',
-    title: 'Graduate Research Scientist',
-    organization: 'University of Amsterdam (The Netherlands)',
-    details:
-      'Built first 3D finite-volume GRMHD simulations of accreting neutron stars with AMR, with MPI-parallelized Fortran/C solvers and large-scale HPC data pipelines.',
-  },
-  {
-    period: 'Sep 2019 - Jun 2024',
     title: 'Ph.D. in Physics',
     organization: 'University of Amsterdam (The Netherlands)',
-    details: 'Doctoral training focused on computational astrophysics, GRMHD, and high-performance scientific computing.',
+    details:
+      'Doctoral training focused on computational astrophysics, GRMHD, and high-performance scientific computing. Built first 3D finite-volume GRMHD simulations of accreting neutron stars with AMR, with MPI-parallelized Fortran/C solvers and large-scale HPC data pipelines.',
   },
   {
     period: 'Aug 2014 - Jun 2019',
