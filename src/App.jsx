@@ -152,7 +152,7 @@ function App() {
             </div>
           </div>
           <div className="hero-photo-wrap hero-photo-slot">
-            <img className="hero-photo" src="/profile.jpg" alt="Pushpita Das profile photo" />
+            <img className="hero-photo" src="/profile-photo.jpg" alt="Pushpita Das profile photo" />
           </div>
         </section>
 
