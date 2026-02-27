@@ -72,9 +72,15 @@ const physicsProjects = [
       'Built MPI-parallelized Fortran/C solvers to capture magnetized plasma dynamics in extreme relativistic conditions.',
       'Designed scalable CPU-cluster workflows and processed over 80 TB of simulation data with optimized CPU, memory, and I/O performance.',
       'Led full-cycle computational fluid dynamics workflows across solver development, radiation transport, and large-scale data analysis.',
-      'Published in The Astrophysical Journal Letters (2024) and MNRAS (2022).',
     ],
     stack: 'Fortran, C, MPI, Python, finite-volume methods, AMR, CFD, GRMHD, HPC',
+    publication: {
+      citation: 'Published in The Astrophysical Journal Letters (2024) and MNRAS (2022).',
+      links: [
+        { label: 'ApJL DOI', href: 'https://doi.org/10.3847/2041-8213/ad151f' },
+        { label: 'MNRAS DOI', href: 'https://doi.org/10.1093/mnras/stac1817' },
+      ],
+    },
   },
   {
     title: 'Ray-Tracing from Global GRMHD Simulations',
@@ -151,12 +157,22 @@ function ProjectCard({ project }) {
       </div>
       <p className="stack">{project.stack}</p>
       {project.publication && (
-        <p className="project-publication">
-          {project.publication.citation}{' '}
-          <a href={project.publication.link} target="_blank" rel="noreferrer" className="paper-link">
-            DOI
-          </a>
-        </p>
+        <div className="project-publication">
+          <p>{project.publication.citation}</p>
+          <div className="paper-links">
+            {project.publication.links?.length ? (
+              project.publication.links.map((paperLink) => (
+                <a key={paperLink.href} href={paperLink.href} target="_blank" rel="noreferrer" className="paper-link">
+                  {paperLink.label}
+                </a>
+              ))
+            ) : (
+              <a href={project.publication.link} target="_blank" rel="noreferrer" className="paper-link">
+                DOI
+              </a>
+            )}
+          </div>
+        </div>
       )}
       {project.github && (
         <a href={project.github} target="_blank" rel="noreferrer" className="repo-link">

@@ -328,6 +328,17 @@ main {
   color: var(--muted);
 }
 
+.project-publication p {
+  margin: 0;
+}
+
+.paper-links {
+  margin-top: 0.42rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
 .paper-link {
   font-family: var(--mono-font);
   font-size: 0.72rem;
@@ -336,7 +347,6 @@ main {
   border: 1px solid color-mix(in srgb, var(--accent) 44%, var(--line));
   border-radius: 999px;
   padding: 0.16rem 0.46rem;
-  margin-left: 0.22rem;
   white-space: nowrap;
   background: color-mix(in srgb, var(--accent-soft) 62%, var(--panel-strong));
 }
