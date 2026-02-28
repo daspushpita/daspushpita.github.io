@@ -164,7 +164,7 @@ main {
   gap: 0.55rem;
 }
 
-.focus-row span {
+.focus-pill {
   padding: 0.42rem 0.75rem;
   border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
   border-radius: 999px;
@@ -172,6 +172,57 @@ main {
   letter-spacing: 0.03em;
   font-family: var(--mono-font);
   background: color-mix(in srgb, var(--accent-soft) 60%, var(--panel-strong));
+}
+
+.focus-pill-cfd {
+  color: var(--text);
+  font-weight: 620;
+  border-color: color-mix(in srgb, rgba(243, 173, 90, 0.95) 62%, var(--line));
+  background: linear-gradient(
+    110deg,
+    color-mix(in srgb, rgba(243, 173, 90, 0.32) 62%, var(--panel-strong)),
+    color-mix(in srgb, var(--accent-soft) 70%, var(--panel-strong))
+  );
+  box-shadow: inset 0 0 0 1px rgba(243, 173, 90, 0.22);
+}
+
+.cfd-spotlight {
+  max-width: 74ch;
+  border: 1px solid color-mix(in srgb, rgba(243, 173, 90, 0.75) 48%, var(--line));
+  border-radius: 14px;
+  padding: 0.72rem 0.82rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, rgba(243, 173, 90, 0.18) 35%, var(--panel)),
+    color-mix(in srgb, var(--panel-strong) 86%, black)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(243, 173, 90, 0.15),
+    0 14px 26px -24px rgba(0, 0, 0, 0.95);
+}
+
+.cfd-spotlight-label {
+  margin: 0;
+  font-family: var(--mono-font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--accent-strong);
+}
+
+.cfd-spotlight-points {
+  margin-top: 0.38rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.cfd-spotlight-points p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.52;
+  border-left: 1px solid color-mix(in srgb, rgba(243, 173, 90, 0.65) 42%, var(--line));
+  padding-left: 0.62rem;
 }
 
 .intro-career {
@@ -679,9 +730,17 @@ main {
     gap: 0.45rem;
   }
 
-  .focus-row span {
+  .focus-pill {
     font-size: 0.72rem;
     padding: 0.36rem 0.62rem;
+  }
+
+  .cfd-spotlight {
+    padding: 0.62rem 0.72rem;
+  }
+
+  .cfd-spotlight-points p {
+    font-size: 0.86rem;
   }
 
   .timeline-list::before {

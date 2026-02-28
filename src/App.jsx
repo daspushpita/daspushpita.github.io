@@ -1,10 +1,17 @@
 import './App.css'
 
 const focusAreas = [
+  'Computational fluid dynamics (CFD)',
   'Scientific machine learning',
   'Large language models',
   'Multimodal retrieval systems',
   'GPU and HPC simulation',
+]
+
+const cfdHighlights = [
+  'Developed first 3D finite-volume GRMHD CFD simulations of accreting neutron stars.',
+  'Built MPI-parallelized Fortran/C solvers with adaptive mesh refinement (AMR).',
+  'Scaled workflows on HPC clusters and processed 80+ TB with optimized CPU, memory, and I/O performance.',
 ]
 
 const mlProjects = [
@@ -125,14 +132,14 @@ const careerTimeline = [
     title: 'THEA Postdoctoral Fellow',
     organization: 'Columbia University (New York, USA)',
     details:
-      'Developed GPU-accelerated simulations of turbulence in highly magnetized radiation-dominated environments and ray-tracing pipelines from global 3D GRMHD simulations.',
+      'Developed GPU-accelerated computational fluid dynamics simulations of turbulence in highly magnetized radiation-dominated environments and ray-tracing pipelines from global 3D GRMHD simulations.',
   },
   {
     period: 'Sep 2019 - Jun 2024',
     title: 'Ph.D. in Physics',
     organization: 'University of Amsterdam (The Netherlands)',
     details:
-      'Doctoral training focused on computational astrophysics, GRMHD, and high-performance scientific computing. Built first 3D finite-volume GRMHD simulations of accreting neutron stars with AMR, with MPI-parallelized Fortran/C solvers and large-scale HPC data pipelines.',
+      'Doctoral training focused on computational fluid dynamics, computational astrophysics, GRMHD, and high-performance scientific computing. Built first 3D finite-volume GRMHD simulations of accreting neutron stars with AMR, with MPI-parallelized Fortran/C solvers and large-scale HPC data pipelines.',
   },
   {
     period: 'Aug 2014 - Jun 2019',
@@ -202,18 +209,31 @@ function App() {
         <section className="hero reveal">
           <div className="hero-content">
             <p className="eyebrow">
-              Computational Scientist | Machine Learning & Data Science | High-Performance Computing | Physics-Driven
-              Modeling
+              Computational Scientist | Computational Fluid Dynamics | Machine Learning & Data Science |
+              High-Performance Computing | Physics-Driven Modeling
             </p>
             <p className="lede">
-              Computational scientist with a PhD in astronomy building scientific machine learning and physics-based simulation
-              systems. I develop reproducible workflows that connect theory, large-scale data, and high-performance
-              computation.
+              Computational scientist with a PhD in astronomy building scientific machine learning, computational fluid
+              dynamics (CFD), and physics-based simulation systems. I develop reproducible workflows that connect theory,
+              large-scale data, and high-performance computation.
             </p>
             <div className="focus-row">
               {focusAreas.map((area) => (
-                <span key={area}>{area}</span>
+                <span
+                  key={area}
+                  className={area === 'Computational fluid dynamics (CFD)' ? 'focus-pill focus-pill-cfd' : 'focus-pill'}
+                >
+                  {area}
+                </span>
               ))}
+            </div>
+            <div className="cfd-spotlight">
+              <p className="cfd-spotlight-label">Computational Fluid Dynamics</p>
+              <div className="cfd-spotlight-points">
+                {cfdHighlights.map((point) => (
+                  <p key={point}>{point}</p>
+                ))}
+              </div>
             </div>
           </div>
           <div className="hero-photo-wrap hero-photo-slot">
@@ -251,7 +271,7 @@ function App() {
         <section className="section-block">
           <div className="section-title reveal">
             <p>Astrophysics Research</p>
-            <h2>GRMHD and Ray-Tracing Projects</h2>
+            <h2>Computational Fluid Dynamics, GRMHD, and Ray-Tracing Projects</h2>
           </div>
           <div className="project-grid">
             {physicsProjects.map((project) => (
@@ -283,7 +303,7 @@ function App() {
             <h2>Contact</h2>
           </div>
           <div className="contact-card reveal">
-            <p>Open to research collaborations and ML engineering roles.</p>
+            <p>Open to research collaborations and roles in scientific ML, CFD, and HPC simulation.</p>
             <div className="contact-links">
               <a href="mailto:pushpitads1996@gmail.com">Email</a>
               <a href="https://github.com/daspushpita" target="_blank" rel="noreferrer">
