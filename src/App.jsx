@@ -8,12 +8,6 @@ const focusAreas = [
   'GPU and HPC simulation',
 ]
 
-const cfdHighlights = [
-  'Developed first 3D finite-volume GRMHD CFD simulations of accreting neutron stars.',
-  'Built MPI-parallelized Fortran/C solvers with adaptive mesh refinement (AMR).',
-  'Scaled workflows on HPC clusters and processed 80+ TB with optimized CPU, memory, and I/O performance.',
-]
-
 const mlProjects = [
   {
     title: 'AstroGPT',
@@ -227,14 +221,6 @@ function App() {
                 </span>
               ))}
             </div>
-            <div className="cfd-spotlight">
-              <p className="cfd-spotlight-label">Computational Fluid Dynamics</p>
-              <div className="cfd-spotlight-points">
-                {cfdHighlights.map((point) => (
-                  <p key={point}>{point}</p>
-                ))}
-              </div>
-            </div>
           </div>
           <div className="hero-photo-wrap hero-photo-slot">
             <img className="hero-photo" src="/profile-photo.jpg" alt="Pushpita Das profile photo" />
@@ -271,7 +257,7 @@ function App() {
         <section className="section-block">
           <div className="section-title reveal">
             <p>Astrophysics Research</p>
-            <h2>Computational Fluid Dynamics, GRMHD, and Ray-Tracing Projects</h2>
+            <h2>General Relativistic Magnetohydrodynamics (GRMHD) and Ray-Tracing Projects</h2>
           </div>
           <div className="project-grid">
             {physicsProjects.map((project) => (

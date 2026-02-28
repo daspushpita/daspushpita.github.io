@@ -186,45 +186,6 @@ main {
   box-shadow: inset 0 0 0 1px rgba(243, 173, 90, 0.22);
 }
 
-.cfd-spotlight {
-  max-width: 74ch;
-  border: 1px solid color-mix(in srgb, rgba(243, 173, 90, 0.75) 48%, var(--line));
-  border-radius: 14px;
-  padding: 0.72rem 0.82rem;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, rgba(243, 173, 90, 0.18) 35%, var(--panel)),
-    color-mix(in srgb, var(--panel-strong) 86%, black)
-  );
-  box-shadow:
-    inset 0 1px 0 rgba(243, 173, 90, 0.15),
-    0 14px 26px -24px rgba(0, 0, 0, 0.95);
-}
-
-.cfd-spotlight-label {
-  margin: 0;
-  font-family: var(--mono-font);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: var(--accent-strong);
-}
-
-.cfd-spotlight-points {
-  margin-top: 0.38rem;
-  display: grid;
-  gap: 0.4rem;
-}
-
-.cfd-spotlight-points p {
-  margin: 0;
-  color: var(--text);
-  font-size: 0.9rem;
-  line-height: 1.52;
-  border-left: 1px solid color-mix(in srgb, rgba(243, 173, 90, 0.65) 42%, var(--line));
-  padding-left: 0.62rem;
-}
-
 .intro-career {
   grid-column: 1 / -1;
   margin-top: clamp(0.35rem, 1.2vw, 0.75rem);
@@ -733,14 +694,6 @@ main {
   .focus-pill {
     font-size: 0.72rem;
     padding: 0.36rem 0.62rem;
-  }
-
-  .cfd-spotlight {
-    padding: 0.62rem 0.72rem;
-  }
-
-  .cfd-spotlight-points p {
-    font-size: 0.86rem;
   }
 
   .timeline-list::before {
