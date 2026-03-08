@@ -19,7 +19,7 @@ const mlProjects = [
       'Using LLaMA-8B teacher outputs to fine-tune GPT-2 student models and evaluate quality-vs-cost tradeoffs.',
       'Added filtering and quality control steps to reduce hallucinations and improve reproducibility.',
     ],
-    stack: 'PyTorch, NLP, LLM distillation, experiment tracking',
+    stack: 'PyTorch, NLP, LLM distillation, Generative AI, Transformers, experiment tracking',
     github: 'https://github.com/daspushpita/MiniAstroGPT',
   },
   {
@@ -32,7 +32,7 @@ const mlProjects = [
       'Combines vector similarity with rule-based filtering for interpretable ranking.',
       'Built scalable data ingestion and prompt parsing pipelines for rapid iteration.',
     ],
-    stack: 'Multimodal ML, embeddings, retrieval, ranking',
+    stack: 'Multimodal ML, embeddings, retrieval, ranking, Generative AI, Transformers',
     github: 'https://github.com/EchoAgent-team/EchoAgent',
   },
   {
@@ -54,7 +54,7 @@ const mlProjects = [
     summary:
       "Supervised multimodal ML pipeline for Parkinson's disease severity prediction.",
     highlights: [
-      'Implemented feature selection, preprocessing, and model training across LR, XGBoost, and RF.',
+      'Implemented feature selection, preprocessing, and model training across logistic regression, XGBoost, and random forest.',
       'Authored approximately 95% of the codebase and full evaluation pipeline.',
       'Achieved 66% accuracy and 96% recall with regularized logistic regression.',
     ],
@@ -120,6 +120,37 @@ const publications = [
   },
 ]
 
+const achievements = [
+  {
+    title: 'THEA postdoctoral fellowship',
+    items: ['THEA Postdoctoral Fellow at Columbia University (July 2024 - January 2026).'],
+  },
+  {
+    title: 'Computing Time Grants (as PI)',
+    items: [
+      'NWO Call 2022 (11.49 million CPU hours).',
+      'PRACE DECI 19 call (2.64 million CPU hours).',
+      'Small NWO Request 2022 (1 million CPU hours).',
+      'Small NWO Request 2021 (500k CPU hours).',
+      'Small NWO Request 2020 (500k CPU hours).',
+    ],
+  },
+  {
+    title: 'Research Fellowships',
+    items: [
+      'Innovation in Science Pursuit and Inspired Research (INSPIRE) Fellowship Grant from the Department of Science and Technology, Government of India (August 2014 - July 2019).',
+      "Visitor Student Program (VSP) fellowship from Raman Research Institute in 2015, 2016, and 2019.",
+    ],
+  },
+  {
+    title: 'Research Community Contributions',
+    items: [
+      'Reviewer for The Astrophysical Journal (ApJ), Astronomy & Astrophysics (A&A), and Monthly Notices of the Royal Astronomical Society (MNRAS).',
+      'Presented results at 6 international conferences as an invited speaker and delivered contributed talks at several other meetings.',
+    ],
+  },
+]
+
 const careerTimeline = [
   {
     period: 'Jul 2024 - Jan 2026',
@@ -133,13 +164,13 @@ const careerTimeline = [
     title: 'Ph.D. in Physics',
     organization: 'University of Amsterdam (The Netherlands)',
     details:
-      'Doctoral training focused on computational fluid dynamics, computational astrophysics, GRMHD, and high-performance scientific computing. Built first 3D finite-volume GRMHD simulations of accreting neutron stars with AMR, with MPI-parallelized Fortran/C solvers and large-scale HPC data pipelines.',
+      'Research focused on general-relativistic magnetohydrodynamics (GRMHD) simulations of compact objects. Developed the first 3D finite-volume GRMHD simulations of accreting neutron stars with Adaptive Mesh Refinement (AMR). Built MPI-parallelized Fortran/C solvers and managed large-scale HPC data pipelines for computational astrophysics.'
   },
   {
     period: 'Aug 2014 - Jun 2019',
-    title: '5-Year BS-MS',
+    title: '5-Year BS-MS (Integrated Dual Degree)',
     organization: 'Indian Institute of Science Education and Research (IISER) Kolkata, India',
-    details: 'Integrated training in physics, applied mathematics, and computational methods for scientific research.',
+    details: 'Integrated BS-MS specializing in physics, with a rigorous background in applied mathematics and computational methods for scientific research.',
   },
 ]
 
@@ -194,6 +225,7 @@ function App() {
         <nav>
           <a href="#projects">Projects</a>
           <a href="#career">Career</a>
+          <a href="#achievements">Achievements</a>
           <a href="#publications">Publications</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -262,6 +294,25 @@ function App() {
           <div className="project-grid">
             {physicsProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </section>
+
+        <section id="achievements" className="section-block achievements">
+          <div className="section-title reveal">
+            <p>Milestones</p>
+            <h2>Achievements</h2>
+          </div>
+          <div className="achievement-list">
+            {achievements.map((achievement) => (
+              <article key={achievement.title} className="achievement-item reveal">
+                <h3>{achievement.title}</h3>
+                <ul>
+                  {achievement.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
             ))}
           </div>
         </section>
