@@ -122,10 +122,6 @@ const publications = [
 
 const achievements = [
   {
-    title: 'THEA postdoctoral fellowship',
-    items: ['THEA Postdoctoral Fellow at Columbia University (July 2024 - January 2026).'],
-  },
-  {
     title: 'Computing Time Grants (as PI)',
     items: [
       'NWO Call 2022 (11.49 million CPU hours).',
@@ -138,6 +134,7 @@ const achievements = [
   {
     title: 'Research Fellowships',
     items: [
+      'THEA Postdoctoral Fellow at Columbia University (July 2024 - January 2026).',
       'Innovation in Science Pursuit and Inspired Research (INSPIRE) Fellowship Grant from the Department of Science and Technology, Government of India (August 2014 - July 2019).',
       "Visitor Student Program (VSP) fellowship from Raman Research Institute in 2015, 2016, and 2019.",
     ],
