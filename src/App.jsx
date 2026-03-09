@@ -97,7 +97,7 @@ const physicsProjects = [
     stack: 'Python, ray tracing, simulation post-processing, HPC',
     publication: {
       citation: 'Published in The Astrophysical Journal (2025).',
-      link: 'https://doi.org/10.3847/1538-4357/add472',
+      link: {label: 'ApJ DOI', href: 'https://doi.org/10.3847/1538-4357/add472' },
     },
   },
 ]
@@ -166,7 +166,7 @@ const careerTimeline = [
   {
     period: 'Aug 2014 - Jun 2019',
     title: '5-Year BS-MS (Integrated Dual Degree)',
-    organization: 'Indian Institute of Science Education and Research (IISER) Kolkata, India',
+    organization: 'Indian Institute of Science Education and Research (IISER) Kolkata (India)',
     details: 'Integrated BS-MS specializing in physics, with a rigorous background in applied mathematics and computational methods for scientific research.',
   },
 ]
