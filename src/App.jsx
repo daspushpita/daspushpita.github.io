@@ -36,6 +36,19 @@ const mlProjects = [
     github: 'https://github.com/EchoAgent-team/EchoAgent',
   },
   {
+    title: 'CoT Decision Dynamics',
+    stage: 'Active',
+    summary:
+      'Studying when chain-of-thought reasoning influences model decisions versus when outputs are driven by internal representations, and how this relates to hidden-state dynamics.',
+    highlights: [
+      'Conducted controlled experiments comparing baseline and CoT prompting, observing about 22% of cases where CoT improves accuracy and about 7% where it leads to incorrect answers.',
+      'Identified regimes of invariance, including about 18% both-wrong cases, suggesting failures driven by internal knowledge limitations rather than reasoning trace quality.',
+      'Developing intervention-based and representation-level analyses to test when model decisions follow generated reasoning traces versus when they diverge from them.',
+    ],
+    stack: 'LLM reasoning, chain-of-thought analysis, hidden-state dynamics, interpretability, representation analysis',
+    github: 'https://github.com/daspushpita/cot-decision-dynamics',
+  },
+  {
     title: 'PINN for Diffusion Equation',
     stage: 'Completed',
     summary:
