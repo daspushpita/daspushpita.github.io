@@ -10,16 +10,29 @@ const focusAreas = [
 
 const mlProjects = [
   {
+    title: 'Surgical Emotion Steering',
+    stage: 'Active',
+    summary:
+      'Mechanistic interpretability project testing whether sycophancy-related emotion representations in RLHF-trained models can be steered more precisely than broad positive-valence interventions.',
+    highlights: [
+      'Extended emotion-representation analysis from proprietary Claude results to open-weight Qwen2.5-32B using residual-stream activation extraction and linear probes.',
+      'Found that PCA of probe directions recovers valence-arousal structure and separates conflict-avoidance emotions into approval-seeking and fear-adjacent sub-clusters.',
+      'Implementing causal steering experiments to test whether conflict avoidance can be decoupled from warmth and whether sycophancy can be reduced without inducing harshness.',
+    ],
+    stack: 'Mechanistic interpretability, activation steering, linear probes, PyTorch, Hugging Face Transformers, Qwen2.5-32B',
+    github: 'https://github.com/daspushpita/emotion-mechanisms-llm',
+  },
+  {
     title: 'CoT Decision Dynamics',
     stage: 'Active',
     summary:
-      'Studying when chain-of-thought reasoning influences model decisions versus when outputs are driven by internal representations, and how this relates to hidden-state dynamics.',
+      'Studying when chain-of-thought reasoning faithfully reflects a model\'s internal computation and when generated reasoning diverges from the decision process.',
     highlights: [
-      'Conducted controlled experiments comparing baseline and CoT prompting, observing about 22% of cases where CoT improves accuracy and about 7% where it leads to incorrect answers.',
-      'Identified regimes of invariance, including about 18% both-wrong cases, suggesting failures driven by internal knowledge limitations rather than reasoning trace quality.',
-      'Developing intervention-based and representation-level analyses to test when model decisions follow generated reasoning traces versus when they diverge from them.',
+      'Built a modular evaluation pipeline comparing baseline and CoT accuracy across about 500 ARC-style reasoning samples on DeepSeek Distill LLaMA.',
+      'Found that CoT improves accuracy in about 22% of cases but actively harms accuracy in about 7%, suggesting reasoning traces can override correct internal signals.',
+      'Designing hidden-state probing experiments to test whether correct answers are linearly decodable from intermediate representations even when CoT produces incorrect outputs.',
     ],
-    stack: 'LLM reasoning, chain-of-thought analysis, hidden-state dynamics, interpretability, representation analysis',
+    stack: 'LLM reasoning, CoT faithfulness, hidden-state dynamics, linear probing, mechanistic interpretability',
     github: 'https://github.com/daspushpita/cot-decision-dynamics',
   },
   {
