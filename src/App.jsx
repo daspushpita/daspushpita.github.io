@@ -262,9 +262,12 @@ function App() {
               High-Performance Computing | Physics-Driven Modeling
             </p>
             <p className="lede">
-              Computational scientist with a PhD in astronomy building scientific machine learning, computational fluid
-              dynamics (CFD), and physics-based simulation systems. I develop reproducible workflows that connect theory,
-              large-scale data, and high-performance computation.
+              Computational physicist with a PhD in Astronomy transitioning into AI safety research. I spent 5+ years
+              developing large-scale multiphysics simulations of neutron stars and black holes on HPC systems, built first
+              generation simulations, and secured multiple computing grants as PI. While working with ML over the past
+              year, I got drawn into AI safety. The gap between what AI models can do and our ability to understand,
+              evaluate, and control them is widening at a serious pace, and given how deeply AI is embedded in every
+              aspect of our lives, that gap is genuinely dangerous. I want to be part of the group working to close it.
             </p>
             <div className="focus-row">
               {focusAreas.map((area) => (
