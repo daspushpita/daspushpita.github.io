@@ -363,8 +363,14 @@ main {
   background: color-mix(in srgb, var(--accent-soft) 62%, var(--panel-strong));
 }
 
-.repo-link {
+.project-links {
   margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.repo-link {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;

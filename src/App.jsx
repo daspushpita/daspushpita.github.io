@@ -10,17 +10,21 @@ const focusAreas = [
 
 const mlProjects = [
   {
-    title: 'Surgical Emotion Steering',
-    stage: 'Active',
+    title: 'The Geometry of Yes',
+    stage: 'Published',
     summary:
-      'Mechanistic interpretability project testing whether sycophancy-related emotion representations in RLHF-trained models can be steered more precisely than broad positive-valence interventions.',
+      'Mechanistic interpretability study mapping how internal emotion directions relate to sycophancy in open-weight instruction-tuned LLMs.',
     highlights: [
-      'Extended emotion-representation analysis from proprietary Claude results to open-weight Qwen2.5-32B using residual-stream activation extraction and linear probes.',
-      'Found that PCA of probe directions recovers valence-arousal structure and separates conflict-avoidance emotions into approval-seeking and fear-adjacent sub-clusters.',
-      'Implementing causal steering experiments to test whether conflict avoidance can be decoupled from warmth and whether sycophancy can be reduced without inducing harshness.',
+      'Replicated emotion-space geometry in Qwen 2.5-32B-Instruct and Gemma 3 27B IT, with PC1 recovering a clean positive-to-negative valence axis.',
+      'Defined steering groups for core positive emotion, negative emotion, compliance, and social distress, then tested sycophancy across single-turn and multi-turn evaluation prompts.',
+      'Used Gram-Schmidt residual directions to separate compliance from core positive emotion; pure compliance reduced sycophancy while preserving warm tone.',
     ],
-    stack: 'Mechanistic interpretability, activation steering, linear probes, PyTorch, Hugging Face Transformers, Qwen2.5-32B',
+    stack: 'Mechanistic interpretability, activation steering, residual-stream analysis, PCA denoising, Gram-Schmidt projection, PyTorch, Hugging Face Transformers',
     github: 'https://github.com/daspushpita/emotion-mechanisms-llm',
+    article: {
+      label: 'LessWrong Post',
+      href: 'https://www.lesswrong.com/posts/v6uCyDNBKhrHevhzM/the-geometry-of-yes-mapping-sycophancy-inside-an-llm-s-1',
+    },
   },
   {
     title: 'CoT Decision Dynamics',
@@ -229,10 +233,19 @@ function ProjectCard({ project }) {
           </div>
         </div>
       )}
-      {project.github && (
-        <a href={project.github} target="_blank" rel="noreferrer" className="repo-link">
-          View Project on GitHub
-        </a>
+      {(project.github || project.article) && (
+        <div className="project-links">
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noreferrer" className="repo-link">
+              View Project on GitHub
+            </a>
+          )}
+          {project.article && (
+            <a href={project.article.href} target="_blank" rel="noreferrer" className="repo-link">
+              {project.article.label}
+            </a>
+          )}
+        </div>
       )}
     </article>
   )
