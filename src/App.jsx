@@ -281,7 +281,6 @@ function BlogCard({ blog }) {
 
 const routes = [
   { path: '/projects', label: 'Projects' },
-  { path: '/career', label: 'Career' },
   { path: '/blogs', label: 'Blogs' },
   { path: '/achievements', label: 'Achievements' },
   { path: '/publications', label: 'Publications' },
@@ -295,32 +294,53 @@ function normalizePath(pathname) {
 
 function HomePage() {
   return (
-    <section className="hero reveal">
-      <div className="hero-content">
-        <p className="eyebrow">
-          Computational Scientist | Computational Fluid Dynamics | Machine Learning & Data Science |
-          High-Performance Computing | Physics-Driven Modeling
-        </p>
-        <p className="lede">
-          Computational scientist with a PhD in astronomy building scientific machine learning, computational fluid
-          dynamics (CFD), and physics-based simulation systems. I develop reproducible workflows that connect theory,
-          large-scale data, and high-performance computation.
-        </p>
-        <div className="focus-row">
-          {focusAreas.map((area) => (
-            <span
-              key={area}
-              className={area === 'Computational fluid dynamics (CFD)' ? 'focus-pill focus-pill-cfd' : 'focus-pill'}
-            >
-              {area}
-            </span>
+    <>
+      <section className="hero reveal">
+        <div className="hero-content">
+          <p className="eyebrow">
+            Computational Scientist | Computational Fluid Dynamics | Machine Learning & Data Science |
+            High-Performance Computing | Physics-Driven Modeling
+          </p>
+          <p className="lede">
+            Computational scientist with a PhD in astronomy building scientific machine learning, computational fluid
+            dynamics (CFD), and physics-based simulation systems. I develop reproducible workflows that connect theory,
+            large-scale data, and high-performance computation.
+          </p>
+          <div className="focus-row">
+            {focusAreas.map((area) => (
+              <span
+                key={area}
+                className={area === 'Computational fluid dynamics (CFD)' ? 'focus-pill focus-pill-cfd' : 'focus-pill'}
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="hero-photo-wrap hero-photo-slot">
+          <img className="hero-photo" src="/profile-photo.jpg" alt="Pushpita Das profile photo" />
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="section-title reveal">
+          <p>Experience</p>
+          <h2>Career Timeline</h2>
+        </div>
+        <div className="timeline-list">
+          {careerTimeline.map((entry) => (
+            <article key={`${entry.title}-${entry.period}`} className="timeline-item reveal">
+              <p className="timeline-period">{entry.period}</p>
+              <div className="timeline-content-card">
+                <h3>{entry.title}</h3>
+                <p className="timeline-org">{entry.organization}</p>
+                <p>{entry.details}</p>
+              </div>
+            </article>
           ))}
         </div>
-      </div>
-      <div className="hero-photo-wrap hero-photo-slot">
-        <img className="hero-photo" src="/profile-photo.jpg" alt="Pushpita Das profile photo" />
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
@@ -351,29 +371,6 @@ function ProjectsPage() {
         </div>
       </section>
     </>
-  )
-}
-
-function CareerPage() {
-  return (
-    <section className="section-block">
-      <div className="section-title reveal">
-        <p>Experience</p>
-        <h2>Career Timeline</h2>
-      </div>
-      <div className="timeline-list">
-        {careerTimeline.map((entry) => (
-          <article key={`${entry.title}-${entry.period}`} className="timeline-item reveal">
-            <p className="timeline-period">{entry.period}</p>
-            <div className="timeline-content-card">
-              <h3>{entry.title}</h3>
-              <p className="timeline-org">{entry.organization}</p>
-              <p>{entry.details}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
   )
 }
 
@@ -465,7 +462,7 @@ function CurrentPage({ path }) {
     case '/projects':
       return <ProjectsPage />
     case '/career':
-      return <CareerPage />
+      return <HomePage />
     case '/blogs':
       return <BlogsPage />
     case '/achievements':
