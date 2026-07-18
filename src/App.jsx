@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 
 const focusAreas = [
@@ -150,6 +151,17 @@ const publications = [
   },
 ]
 
+const blogs = [
+  {
+    title: "The Geometry of Yes: Mapping Sycophancy Inside an LLM's Emotion Space",
+    outlet: 'LessWrong',
+    date: 'July 7, 2026',
+    summary:
+      'A mechanistic interpretability write-up on emotion-space geometry in Qwen and Gemma, showing that positive-emotion residual directions raise sycophancy while pure compliance can reduce it without making responses harsh.',
+    link: 'https://www.lesswrong.com/posts/v6uCyDNBKhrHevhzM/the-geometry-of-yes-mapping-sycophancy-inside-an-llm-s-1',
+  },
+]
+
 const achievements = [
   {
     title: 'Computing Time Grants (as PI)',
@@ -251,149 +263,290 @@ function ProjectCard({ project }) {
   )
 }
 
+function BlogCard({ blog }) {
+  return (
+    <article className="blog-card reveal">
+      <div className="blog-meta">
+        <span>{blog.outlet}</span>
+        <span>{blog.date}</span>
+      </div>
+      <h3>{blog.title}</h3>
+      <p>{blog.summary}</p>
+      <a href={blog.link} target="_blank" rel="noreferrer" className="repo-link">
+        Read Post
+      </a>
+    </article>
+  )
+}
+
+const routes = [
+  { path: '/projects', label: 'Projects' },
+  { path: '/career', label: 'Career' },
+  { path: '/blogs', label: 'Blogs' },
+  { path: '/achievements', label: 'Achievements' },
+  { path: '/publications', label: 'Publications' },
+  { path: '/contact', label: 'Contact' },
+]
+
+function normalizePath(pathname) {
+  const cleanPath = pathname.replace(/\/+$/, '')
+  return cleanPath || '/'
+}
+
+function HomePage() {
+  return (
+    <section className="hero reveal">
+      <div className="hero-content">
+        <p className="eyebrow">
+          Computational Scientist | Computational Fluid Dynamics | Machine Learning & Data Science |
+          High-Performance Computing | Physics-Driven Modeling
+        </p>
+        <p className="lede">
+          Computational scientist with a PhD in astronomy building scientific machine learning, computational fluid
+          dynamics (CFD), and physics-based simulation systems. I develop reproducible workflows that connect theory,
+          large-scale data, and high-performance computation.
+        </p>
+        <div className="focus-row">
+          {focusAreas.map((area) => (
+            <span
+              key={area}
+              className={area === 'Computational fluid dynamics (CFD)' ? 'focus-pill focus-pill-cfd' : 'focus-pill'}
+            >
+              {area}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="hero-photo-wrap hero-photo-slot">
+        <img className="hero-photo" src="/profile-photo.jpg" alt="Pushpita Das profile photo" />
+      </div>
+    </section>
+  )
+}
+
+function ProjectsPage() {
+  return (
+    <>
+      <section className="section-block">
+        <div className="section-title reveal">
+          <p>Selected Work</p>
+          <h2>Machine Learning Projects</h2>
+        </div>
+        <div className="project-grid">
+          {mlProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="section-title reveal">
+          <p>Astrophysics Research</p>
+          <h2>General Relativistic Magnetohydrodynamics (GRMHD) and Ray-Tracing Projects</h2>
+        </div>
+        <div className="project-grid">
+          {physicsProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </section>
+    </>
+  )
+}
+
+function CareerPage() {
+  return (
+    <section className="section-block">
+      <div className="section-title reveal">
+        <p>Experience</p>
+        <h2>Career Timeline</h2>
+      </div>
+      <div className="timeline-list">
+        {careerTimeline.map((entry) => (
+          <article key={`${entry.title}-${entry.period}`} className="timeline-item reveal">
+            <p className="timeline-period">{entry.period}</p>
+            <div className="timeline-content-card">
+              <h3>{entry.title}</h3>
+              <p className="timeline-org">{entry.organization}</p>
+              <p>{entry.details}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function BlogsPage() {
+  return (
+    <section className="section-block blogs">
+      <div className="section-title reveal">
+        <p>Writing</p>
+        <h2>Blogs</h2>
+      </div>
+      <div className="blog-list">
+        {blogs.map((blog) => (
+          <BlogCard key={blog.link} blog={blog} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function AchievementsPage() {
+  return (
+    <section className="section-block achievements">
+      <div className="section-title reveal">
+        <p>Milestones</p>
+        <h2>Achievements</h2>
+      </div>
+      <div className="achievement-list">
+        {achievements.map((achievement) => (
+          <article key={achievement.title} className="achievement-item reveal">
+            <h3>{achievement.title}</h3>
+            <ul>
+              {achievement.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function PublicationsPage() {
+  return (
+    <section className="section-block publications">
+      <div className="section-title reveal">
+        <p>Research</p>
+        <h2>Selected Publications</h2>
+      </div>
+      <div className="publication-list">
+        {publications.map((paper) => (
+          <article key={paper.link} className="publication-item reveal">
+            <p>{paper.citation}</p>
+            <a href={paper.link} target="_blank" rel="noreferrer">
+              DOI
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ContactPage() {
+  return (
+    <section className="section-block contact-section">
+      <div className="section-title reveal">
+        <p>Get in Touch</p>
+        <h2>Contact</h2>
+      </div>
+      <div className="contact-card reveal">
+        <p>Open to research collaborations and roles in scientific ML, CFD, and HPC simulation.</p>
+        <div className="contact-links">
+          <a href="mailto:pushpitads1996@gmail.com">Email</a>
+          <a href="https://github.com/daspushpita" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/pushpita-das/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function CurrentPage({ path }) {
+  switch (path) {
+    case '/projects':
+      return <ProjectsPage />
+    case '/career':
+      return <CareerPage />
+    case '/blogs':
+      return <BlogsPage />
+    case '/achievements':
+      return <AchievementsPage />
+    case '/publications':
+      return <PublicationsPage />
+    case '/contact':
+      return <ContactPage />
+    case '/':
+      return <HomePage />
+    default:
+      return <HomePage />
+  }
+}
+
+function getInitialPath() {
+  const redirectedPath = window.sessionStorage.getItem('redirectPath')
+
+  if (redirectedPath) {
+    window.sessionStorage.removeItem('redirectPath')
+    window.history.replaceState({}, '', redirectedPath)
+    return normalizePath(redirectedPath)
+  }
+
+  return normalizePath(window.location.pathname)
+}
+
 function App() {
+  const [path, setPath] = useState(getInitialPath)
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setPath(normalizePath(window.location.pathname))
+      window.scrollTo({ top: 0 })
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const navigate = (event, nextPath) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return
+    }
+
+    event.preventDefault()
+    if (path !== nextPath) {
+      window.history.pushState({}, '', nextPath)
+      setPath(nextPath)
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <div className="site-shell">
       <header className="top-nav">
-        <a href="#top" className="brand">
+        <a href="/" className="brand" onClick={(event) => navigate(event, '/')}>
           Pushpita Das
         </a>
         <nav>
-          <a href="#projects">Projects</a>
-          <a href="#career">Career</a>
-          <a href="#achievements">Achievements</a>
-          <a href="#publications">Publications</a>
-          <a href="#contact">Contact</a>
+          {routes.map((route) => (
+            <a
+              key={route.path}
+              href={route.path}
+              className={path === route.path ? 'active-nav' : undefined}
+              onClick={(event) => navigate(event, route.path)}
+            >
+              {route.label}
+            </a>
+          ))}
         </nav>
       </header>
 
-      <main id="top">
-        <section className="hero reveal">
-          <div className="hero-content">
-            <p className="eyebrow">
-              Computational Scientist | Computational Fluid Dynamics | Machine Learning & Data Science |
-              High-Performance Computing | Physics-Driven Modeling
-            </p>
-            <p className="lede">
-              Computational scientist with a PhD in astronomy building scientific machine learning, computational fluid
-              dynamics (CFD), and physics-based simulation systems. I develop reproducible workflows that connect theory,
-              large-scale data, and high-performance computation.
-            </p>
-            <div className="focus-row">
-              {focusAreas.map((area) => (
-                <span
-                  key={area}
-                  className={area === 'Computational fluid dynamics (CFD)' ? 'focus-pill focus-pill-cfd' : 'focus-pill'}
-                >
-                  {area}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="hero-photo-wrap hero-photo-slot">
-            <img className="hero-photo" src="/profile-photo.jpg" alt="Pushpita Das profile photo" />
-          </div>
-          <div id="career" className="intro-career">
-            <p className="intro-career-label">Career Timeline</p>
-            <div className="timeline-list">
-              {careerTimeline.map((entry) => (
-                <article key={`${entry.title}-${entry.period}`} className="timeline-item reveal">
-                  <p className="timeline-period">{entry.period}</p>
-                  <div className="timeline-content-card">
-                    <h3>{entry.title}</h3>
-                    <p className="timeline-org">{entry.organization}</p>
-                    <p>{entry.details}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" className="section-block">
-          <div className="section-title reveal">
-            <p>Selected Work</p>
-            <h2>Machine Learning Projects</h2>
-          </div>
-          <div className="project-grid">
-            {mlProjects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-        </section>
-
-        <section className="section-block">
-          <div className="section-title reveal">
-            <p>Astrophysics Research</p>
-            <h2>General Relativistic Magnetohydrodynamics (GRMHD) and Ray-Tracing Projects</h2>
-          </div>
-          <div className="project-grid">
-            {physicsProjects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-        </section>
-
-        <section id="achievements" className="section-block achievements">
-          <div className="section-title reveal">
-            <p>Milestones</p>
-            <h2>Achievements</h2>
-          </div>
-          <div className="achievement-list">
-            {achievements.map((achievement) => (
-              <article key={achievement.title} className="achievement-item reveal">
-                <h3>{achievement.title}</h3>
-                <ul>
-                  {achievement.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="publications" className="section-block publications">
-          <div className="section-title reveal">
-            <p>Research</p>
-            <h2>Selected Publications</h2>
-          </div>
-          <div className="publication-list">
-            {publications.map((paper) => (
-              <article key={paper.link} className="publication-item reveal">
-                <p>{paper.citation}</p>
-                <a href={paper.link} target="_blank" rel="noreferrer">
-                  DOI
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="contact" className="section-block contact-section">
-          <div className="section-title reveal">
-            <p>Get in Touch</p>
-            <h2>Contact</h2>
-          </div>
-          <div className="contact-card reveal">
-            <p>Open to research collaborations and roles in scientific ML, CFD, and HPC simulation.</p>
-            <div className="contact-links">
-              <a href="mailto:pushpitads1996@gmail.com">Email</a>
-              <a href="https://github.com/daspushpita" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/pushpita-das/" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </section>
+      <main>
+        <CurrentPage path={path} />
       </main>
 
       <footer className="footer reveal">
         <p>Pushpita Das</p>
         <div>
-          <a href="#top">Back to top</a>
+          <a href="/" onClick={(event) => navigate(event, '/')}>Home</a>
         </div>
       </footer>
     </div>
