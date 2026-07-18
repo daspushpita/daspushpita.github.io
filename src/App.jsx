@@ -28,6 +28,23 @@ const mlProjects = [
     },
   },
   {
+    title: 'AstroGPT',
+    stage: 'Published',
+    summary:
+      'Teacher-student distillation framework for controllable scientific text generation over 80,000+ astrophysics abstracts.',
+    highlights: [
+      'Built ingestion and preprocessing pipelines from arXiv metadata to schema-constrained training corpora.',
+      'Using LLaMA-8B teacher outputs to fine-tune GPT-2 student models and evaluate quality-vs-cost tradeoffs.',
+      'Added filtering and quality control steps to reduce hallucinations and improve reproducibility.',
+    ],
+    stack: 'PyTorch, NLP, LLM distillation, Generative AI, Transformers, experiment tracking',
+    github: 'https://github.com/daspushpita/MiniAstroGPT',
+    app: {
+      label: 'Hugging Face App',
+      href: 'https://huggingface.co/spaces/pudas96/AstroGPT',
+    },
+  },
+  {
     title: 'CoT Decision Dynamics',
     stage: 'Active',
     summary:
@@ -39,19 +56,6 @@ const mlProjects = [
     ],
     stack: 'LLM reasoning, CoT faithfulness, hidden-state dynamics, linear probing, mechanistic interpretability',
     github: 'https://github.com/daspushpita/cot-decision-dynamics',
-  },
-  {
-    title: 'AstroGPT',
-    stage: 'Active',
-    summary:
-      'Teacher-student distillation framework for controllable scientific text generation over 80,000+ astrophysics abstracts.',
-    highlights: [
-      'Built ingestion and preprocessing pipelines from arXiv metadata to schema-constrained training corpora.',
-      'Using LLaMA-8B teacher outputs to fine-tune GPT-2 student models and evaluate quality-vs-cost tradeoffs.',
-      'Added filtering and quality control steps to reduce hallucinations and improve reproducibility.',
-    ],
-    stack: 'PyTorch, NLP, LLM distillation, Generative AI, Transformers, experiment tracking',
-    github: 'https://github.com/daspushpita/MiniAstroGPT',
   },
   {
     title: 'EchoAgent',
@@ -245,7 +249,7 @@ function ProjectCard({ project }) {
           </div>
         </div>
       )}
-      {(project.github || project.article) && (
+      {(project.github || project.article || project.app) && (
         <div className="project-links">
           {project.github && (
             <a href={project.github} target="_blank" rel="noreferrer" className="repo-link">
@@ -255,6 +259,11 @@ function ProjectCard({ project }) {
           {project.article && (
             <a href={project.article.href} target="_blank" rel="noreferrer" className="repo-link">
               {project.article.label}
+            </a>
+          )}
+          {project.app && (
+            <a href={project.app.href} target="_blank" rel="noreferrer" className="repo-link">
+              {project.app.label}
             </a>
           )}
         </div>
