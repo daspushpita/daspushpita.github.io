@@ -307,7 +307,7 @@ function HomePage() {
       <section className="hero reveal">
         <div className="hero-content">
           <p className="eyebrow">
-            AI Safety Researcher | Mechanistic Interpretability | Computational Astrophysicist | Large Language Models |
+            AI Safety Researcher | Computational Astrophysicist | Large Language Models |
             Computational Fluid Dynamics | High-Performance Computing
           </p>
           <p className="lede">
