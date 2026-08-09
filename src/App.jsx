@@ -314,8 +314,7 @@ function HomePage() {
             Computational astrophysicist transitioning into AI safety, driven by the catastrophic risks advanced AI
             models pose. I spent 6+ years simulating some of the most complex physical systems in nature, building HPC
             codebases and running large-scale numerical experiments. That background now grounds my empirical AI safety
-            research into interpretability and LLM behavior. I'm currently working independently in this space and
-            looking for full-time research roles.
+            research into interpretability and LLM behavior.
           </p>
           <div className="focus-row">
             {focusAreas.map((area) => (
