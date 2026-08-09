@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const focusAreas = [
-  'Computational fluid dynamics (CFD)',
-  'Scientific machine learning',
+  'AI safety & interpretability',
+  'Activation steering',
   'Large language models',
-  'Multimodal retrieval systems',
+  'Computational fluid dynamics (CFD)',
   'GPU and HPC simulation',
 ]
 
@@ -307,13 +307,15 @@ function HomePage() {
       <section className="hero reveal">
         <div className="hero-content">
           <p className="eyebrow">
-            Computational Scientist | Computational Fluid Dynamics | Machine Learning & Data Science |
-            High-Performance Computing | Physics-Driven Modeling
+            AI Safety Researcher | Mechanistic Interpretability | Computational Astrophysicist | Large Language Models |
+            Computational Fluid Dynamics | High-Performance Computing
           </p>
           <p className="lede">
-            Computational scientist with a PhD in astronomy building scientific machine learning, computational fluid
-            dynamics (CFD), and physics-based simulation systems. I develop reproducible workflows that connect theory,
-            large-scale data, and high-performance computation.
+            Computational astrophysicist transitioning into AI safety, driven by the catastrophic risks advanced AI
+            models pose. I spent 6+ years simulating some of the most complex physical systems in nature, building HPC
+            codebases and running large-scale numerical experiments. That background now grounds my empirical AI safety
+            research into interpretability and LLM behavior. I'm currently working independently in this space and
+            looking for full-time research roles.
           </p>
           <div className="focus-row">
             {focusAreas.map((area) => (
@@ -451,7 +453,10 @@ function ContactPage() {
         <h2>Contact</h2>
       </div>
       <div className="contact-card reveal">
-        <p>Open to research collaborations and roles in scientific ML, CFD, and HPC simulation.</p>
+        <p>
+          Open to full-time roles and collaborations in AI safety and interpretability research, as well as research
+          collaborations in scientific ML, CFD, and HPC simulation.
+        </p>
         <div className="contact-links">
           <a href="mailto:pushpitads1996@gmail.com">Email</a>
           <a href="https://github.com/daspushpita" target="_blank" rel="noreferrer">
