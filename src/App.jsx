@@ -307,14 +307,16 @@ function HomePage() {
       <section className="hero reveal">
         <div className="hero-content">
           <p className="eyebrow">
-            AI Safety Researcher | Computational Astrophysicist | Large Language Models |
-            Computational Fluid Dynamics | High-Performance Computing
+            Computational Astrophysicist | Large Language Models | Computational Fluid Dynamics | High-Performance
+            Computing
           </p>
           <p className="lede">
-            Computational astrophysicist transitioning into AI safety, driven by the catastrophic risks advanced AI
-            models pose. I spent 6+ years simulating some of the most complex physical systems in nature, building HPC
-            codebases and running large-scale numerical experiments. That background now grounds my empirical AI safety
-            research into interpretability and LLM behavior.
+            Computational scientist with 6+ years of experience in numerical modeling, scientific computing, and
+            high-performance computing, with a background in computational astrophysics and growing work in machine
+            learning and large language models. I have developed and worked with large-scale simulation codebases, run
+            GPU-accelerated numerical experiments, and analyzed complex physical systems. I am now applying this
+            computational research background across machine learning, AI for science, scientific software, and empirical
+            AI research.
           </p>
           <div className="focus-row">
             {focusAreas.map((area) => (
