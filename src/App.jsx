@@ -356,33 +356,51 @@ function HomePage() {
   )
 }
 
+function ResearchCard({ title, description, projects }) {
+  return (
+    <details className="research-card">
+      <summary className="research-card-summary">
+        <span className="research-card-copy">
+          <h3>{title}</h3>
+          <span className="research-card-description">{description}</span>
+          <span className="research-card-action">
+            <span className="when-closed">Explore {projects.length} projects</span>
+            <span className="when-open">Collapse projects</span>
+          </span>
+        </span>
+        <span className="research-card-icon" aria-hidden="true" />
+      </summary>
+      <div className="research-card-content">
+        <div className="project-grid">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      </div>
+    </details>
+  )
+}
+
 function ProjectsPage() {
   return (
-    <>
-      <section className="section-block">
-        <div className="section-title reveal">
-          <p>Selected Work</p>
-          <h2>Machine Learning Projects</h2>
-        </div>
-        <div className="project-grid">
-          {mlProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-      </section>
-
-      <section className="section-block">
-        <div className="section-title reveal">
-          <p>Astrophysics Research</p>
-          <h2>General Relativistic Magnetohydrodynamics (GRMHD) and Ray-Tracing Projects</h2>
-        </div>
-        <div className="project-grid">
-          {physicsProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
-      </section>
-    </>
+    <section className="section-block">
+      <div className="section-title reveal">
+        <p>Selected Work</p>
+        <h2>Research</h2>
+      </div>
+      <div className="research-grid">
+        <ResearchCard
+          title="Astrophysics Research"
+          description="General relativistic magnetohydrodynamics (GRMHD), neutron stars, and ray tracing."
+          projects={physicsProjects}
+        />
+        <ResearchCard
+          title="ML and AI Safety Research"
+          description="Mechanistic interpretability, language models, and scientific machine learning."
+          projects={mlProjects}
+        />
+      </div>
+    </section>
   )
 }
 
