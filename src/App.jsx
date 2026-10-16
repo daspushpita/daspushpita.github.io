@@ -196,21 +196,28 @@ const achievements = [
 
 const careerTimeline = [
   {
-    period: 'Jul 2024 - Jan 2026',
+    period: '2026 – present',
+    title: 'Independent AI Safety Researcher',
+    organization: 'Coefficient Giving Career Transition Grant (being finalized)',
+    details:
+      'Funded by Coefficient Giving (formerly Open Philanthropy) to transition into full-time technical AI safety research; currently scoping an independent project in model biology, building on prior work on sycophancy in LLMs.',
+  },
+  {
+    period: '2024 – 2026',
     title: 'THEA Postdoctoral Fellow',
     organization: 'Columbia University (New York, USA)',
     details:
       'Developed GPU-accelerated computational fluid dynamics simulations of turbulence in highly magnetized radiation-dominated environments and ray-tracing pipelines from global 3D GRMHD simulations.',
   },
   {
-    period: 'Sep 2019 - Jun 2024',
+    period: '2019 – 2024',
     title: 'Ph.D. in Physics',
     organization: 'University of Amsterdam (The Netherlands)',
     details:
       'Research focused on general-relativistic magnetohydrodynamics (GRMHD) simulations of compact objects. Developed the first 3D finite-volume GRMHD simulations of accreting neutron stars with Adaptive Mesh Refinement (AMR). Built MPI-parallelized Fortran/C solvers and managed large-scale HPC data pipelines for computational astrophysics.'
   },
   {
-    period: 'Aug 2014 - Jun 2019',
+    period: '2014 – 2019',
     title: '5-Year BS-MS (Integrated Dual Degree)',
     organization: 'Indian Institute of Science Education and Research (IISER) Kolkata (India)',
     details: 'Integrated BS-MS specializing in physics, with a rigorous background in applied mathematics and computational methods for scientific research.',
