@@ -198,7 +198,7 @@ const careerTimeline = [
   {
     period: '2026 – present',
     title: 'Independent AI Safety Researcher',
-    organization: 'Coefficient Giving Career Transition Grant (being finalized)',
+    organization: 'Coefficient Giving Career Transition Grant',
     details:
       'Funded by Coefficient Giving (formerly Open Philanthropy) to transition into full-time technical AI safety research; currently scoping an independent project in model biology, building on prior work on sycophancy in LLMs.',
   },
